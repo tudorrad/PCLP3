@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>StoryEngine.Editor</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StoryEngine.Model\StoryEngine.Model.csproj" />
+    <ProjectReference Include="..\StoryEngine.Engine\StoryEngine.Engine.csproj" />
+    <ProjectReference Include="..\StoryEngine.Persistence\StoryEngine.Persistence.csproj" />
+  </ItemGroup>
+</Project>

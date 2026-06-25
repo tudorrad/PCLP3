@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "StoryEngine.Player": {
+      "commandName": "Project"
+    }
+  }
+}
