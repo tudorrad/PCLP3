@@ -83,6 +83,12 @@ public partial class EditorMainForm : Form
         blockMenu.DropDownItems.AddRange(new ToolStripItem[] { addBlock, delBlock });
         _menu.Items.Add(blockMenu);
 
+        var toolsMenu = new ToolStripMenuItem("Unelte") { ForeColor = Color.White };
+        var validateItem = new ToolStripMenuItem("Validează povestea...") { ForeColor = Color.White };
+        validateItem.Click += (_, _) => ValidateStory();
+        toolsMenu.DropDownItems.Add(validateItem);
+        _menu.Items.Add(toolsMenu);
+
         Controls.Add(_menu);
         MainMenuStrip = _menu;
 
@@ -292,6 +298,7 @@ public partial class EditorMainForm : Form
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColText",   HeaderText = "Text decizie",   FillWeight = 40 });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColTarget", HeaderText = "Bloc destinație", FillWeight = 25 });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColIcon",   HeaderText = "Icon (emoji)",   FillWeight = 10 });
+        _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColCondition", HeaderText = "Condiție (ex: sanatate>=20)", FillWeight = 28 });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColEffects",HeaderText = "Efecte (prop:op:val,...)", FillWeight = 25 });
 
         _editorPanel.Controls.Add(_decisionsGrid);
@@ -372,6 +379,7 @@ public partial class EditorMainForm : Form
         _propsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PMax",      HeaderText = "Max",         FillWeight = 8 });
         _propsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PInit",     HeaderText = "Inițial",     FillWeight = 8 });
         _propsGrid.Columns.Add(new DataGridViewCheckBoxColumn{ Name = "PHudVis",   HeaderText = "Vis. HUD",    FillWeight = 8 });
+        _propsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PHudOrder", HeaderText = "Ord. HUD", FillWeight = 7 });
         _propsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "POnMin",    HeaderText = "Bloc la Min", FillWeight = 20 });
         _propsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "POnMax",    HeaderText = "Bloc la Max", FillWeight = 20 });
 
@@ -499,7 +507,8 @@ public partial class EditorMainForm : Form
         {
             string effects = string.Join(",",
                 dec.Effects.Select(e => $"{e.Property}:{e.Type}:{e.Value}"));
-            _decisionsGrid.Rows.Add(dec.Text, dec.TargetBlock, dec.Icon ?? "", effects);
+            string condText = ConditionToText(dec.Condition);
+            _decisionsGrid.Rows.Add(dec.Text, dec.TargetBlock, dec.Icon ?? "", condText, effects);
         }
     }
 
@@ -544,7 +553,8 @@ public partial class EditorMainForm : Form
             {
                 Text        = text,
                 TargetBlock = target,
-                Icon        = row.Cells["ColIcon"].Value?.ToString()
+                Icon        = row.Cells["ColIcon"].Value?.ToString(),
+                Condition = ParseCondition(row.Cells["ColCondition"].Value?.ToString())
             };
 
             string? effectsStr = row.Cells["ColEffects"].Value?.ToString();
@@ -638,7 +648,7 @@ public partial class EditorMainForm : Form
         _propsGrid.Rows.Clear();
         foreach (var p in _story.Properties)
             _propsGrid.Rows.Add(p.Key, p.HudLabel, p.Min, p.Max, p.Initial,
-                p.VisibleInHud, p.OnMinBlock, p.OnMaxBlock);
+                p.VisibleInHud, p.HudOrder, p.OnMinBlock, p.OnMaxBlock);
 
         RefreshBlockList();
         UpdateTitle();
@@ -696,6 +706,115 @@ public partial class EditorMainForm : Form
         };
         btn.FlatAppearance.BorderColor = Color.FromArgb(80, 80, 100);
         return btn;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // VALIDARE
+    // ──────────────────────────────────────────────────────
+
+    private void ValidateStory()
+    {
+        CommitCurrentBlock(); // commit bloc curent fără dialog
+        // Nota: apelează manual "Salvează meta-date" înainte de validare
+        // dacă ai modificat titlul sau proprietățile și nu ai apăsat Ctrl+S.
+
+        var errors = StoryEngine.Engine.StoryValidator.Validate(_story, _images.Keys);
+
+        if (errors.Count == 0)
+        {
+            MessageBox.Show("Povestea este validă! Nicio eroare găsită.",
+                "Validare OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine($"S-au găsit {errors.Count} erori:\n");
+
+        foreach (var group in errors.GroupBy(e => e.Category))
+        {
+            sb.AppendLine($"── {group.Key} ──");
+            foreach (var err in group)
+                sb.AppendLine($"  • {err.Message}");
+            sb.AppendLine();
+        }
+
+        MessageBox.Show(sb.ToString(), $"Validare: {errors.Count} erori",
+            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+
+    // ──────────────────────────────────────────────────────
+    // CONDIȚII: TEXT ↔ ConditionNode
+    // Format: "sanatate >= 20"  sau  "AND(sanatate >= 20; suspiciune < 50)"
+    // ──────────────────────────────────────────────────────
+
+    private static string ConditionToText(ConditionNode? node)
+    {
+        if (node == null) return "";
+        if (node.Type == "COMPARISON")
+            return $"{node.Property} {node.Operator} {node.Value?.ToString(System.Globalization.CultureInfo.InvariantCulture)}";
+        if (node.Type is "AND" or "OR")
+        {
+            var parts = node.Conditions?.Select(ConditionToText) ?? Array.Empty<string>();
+            return $"{node.Type}({string.Join("; ", parts)})";
+        }
+        return "";
+    }
+
+    private static ConditionNode? ParseCondition(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return null;
+        text = text.Trim();
+
+        if (text.StartsWith("AND(", StringComparison.OrdinalIgnoreCase) && text.EndsWith(")"))
+            return ParseCompound("AND", text[4..^1]);
+        if (text.StartsWith("OR(", StringComparison.OrdinalIgnoreCase) && text.EndsWith(")"))
+            return ParseCompound("OR", text[3..^1]);
+
+        // Comparație simplă: prop op val  (ordinea importantă: >= înainte de >)
+        foreach (var op in new[] { ">=", "<=", "!=", ">", "<", "==" })
+        {
+            int idx = text.IndexOf(op, StringComparison.Ordinal);
+            if (idx <= 0) continue;
+            string prop = text[..idx].Trim();
+            string valStr = text[(idx + op.Length)..].Trim();
+            if (!string.IsNullOrEmpty(prop)
+                && double.TryParse(valStr,
+                    System.Globalization.NumberStyles.Any,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    out double val))
+            {
+                return new ConditionNode
+                { Type = "COMPARISON", Property = prop, Operator = op, Value = val };
+            }
+        }
+        return null;
+    }
+
+    private static ConditionNode ParseCompound(string type, string inner)
+    {
+        var parts = new List<string>();
+        int depth = 0, start = 0;
+        for (int i = 0; i < inner.Length; i++)
+        {
+            if (inner[i] == '(') depth++;
+            else if (inner[i] == ')') depth--;
+            else if (inner[i] == ';' && depth == 0)
+            {
+                parts.Add(inner[start..i].Trim());
+                start = i + 1;
+            }
+        }
+        parts.Add(inner[start..].Trim());
+
+        return new ConditionNode
+        {
+            Type = type,
+            Conditions = parts
+                .Select(ParseCondition)
+                .Where(c => c != null)
+                .Cast<ConditionNode>()
+                .ToList()
+        };
     }
 
     protected override void OnFormClosing(FormClosingEventArgs e)

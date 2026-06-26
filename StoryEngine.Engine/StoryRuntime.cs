@@ -99,6 +99,19 @@ public class StoryRuntime
     /// <summary>
     /// Returneaza toate blocurile (pentru editor).
     /// </summary>
+    /// 
+    public void RestoreState(string blockId, Dictionary<string, double> values)
+    {
+        var block = GetBlock(blockId)
+            ?? throw new InvalidOperationException($"Block '{blockId}' not found in save file.");
+
+        _currentBlock = block;
+
+        foreach (var kv in values)
+            _state.Set(kv.Key, kv.Value);
+
+        NotifyBlock();
+    }
     public IReadOnlyList<StoryBlock> AllBlocks => _story.Blocks;
     public StoryDefinition Definition => _story;
 }

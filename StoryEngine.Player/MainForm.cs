@@ -64,13 +64,18 @@ public partial class MainForm : Form
         var openItem    = new ToolStripMenuItem("Deschide poveste...  Ctrl+O") { ForeColor = Color.White };
         var restartItem = new ToolStripMenuItem("Repornește  F5")              { ForeColor = Color.White };
         var exitItem    = new ToolStripMenuItem("Ieșire")                      { ForeColor = Color.FromArgb(200,100,100) };
+        var saveStateItem = new ToolStripMenuItem("Salvează stare...") { ForeColor = Color.White };
+        var loadStateItem = new ToolStripMenuItem("Încarcă stare...") { ForeColor = Color.White };
+
 
         openItem.Click    += (_, _) => OpenStory();
         restartItem.Click += (_, _) => RestartStory();
+        saveStateItem.Click += (_, _) => SaveGameState();
+        loadStateItem.Click += (_, _) => LoadGameState();
         exitItem.Click    += (_, _) => Application.Exit();
 
         fileMenu.DropDownItems.AddRange(new ToolStripItem[]
-            { openItem, restartItem, new ToolStripSeparator(), exitItem });
+            { openItem, restartItem, new ToolStripSeparator(), saveStateItem, loadStateItem, new ToolStripSeparator(), exitItem });
         fileMenu.DropDownOpening += (_, _) =>
         {
             foreach (ToolStripItem i in fileMenu.DropDownItems)
@@ -561,6 +566,90 @@ public partial class MainForm : Form
         return "";
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // SAVE / LOAD STATE
+    // ─────────────────────────────────────────────────────────────
+
+    private void SaveGameState()
+    {
+        if (_runtime == null)
+        {
+            MessageBox.Show("Deschide mai întâi o poveste.", "Info",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        using var dlg = new SaveFileDialog
+        {
+            Title = "Salvează stare joc",
+            Filter = "Save files (*.sav)|*.sav|All files (*.*)|*.*",
+            DefaultExt = "sav",
+            FileName = _runtime.Definition.Title + "_save"
+        };
+        if (dlg.ShowDialog() != DialogResult.OK) return;
+
+        try
+        {
+            var saveData = new GameSaveData
+            {
+                StoryTitle = _runtime.Definition.Title,
+                CurrentBlockId = _runtime.CurrentBlock.Id,
+                PropertyValues = new Dictionary<string, double>(_runtime.State.Values)
+            };
+
+            string json = System.Text.Json.JsonSerializer.Serialize(
+                saveData,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(dlg.FileName, json);
+
+            MessageBox.Show("Stare salvată cu succes.", "Salvare",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Eroare la salvare:\n{ex.Message}", "Eroare",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void LoadGameState()
+    {
+        if (_runtime == null)
+        {
+            MessageBox.Show("Deschide mai întâi povestea corespunzătoare salvării.", "Info",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        using var dlg = new OpenFileDialog
+        {
+            Title = "Încarcă stare joc",
+            Filter = "Save files (*.sav)|*.sav|All files (*.*)|*.*"
+        };
+        if (dlg.ShowDialog() != DialogResult.OK) return;
+
+        try
+        {
+            string json = File.ReadAllText(dlg.FileName);
+            var saveData = System.Text.Json.JsonSerializer.Deserialize<GameSaveData>(json)
+                ?? throw new InvalidDataException("Fișier de salvare corupt sau invalid.");
+
+            _runtime.RestoreState(saveData.CurrentBlockId, saveData.PropertyValues);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Eroare la încărcare:\n{ex.Message}", "Eroare",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private sealed class GameSaveData
+    {
+        public string StoryTitle { get; set; } = string.Empty;
+        public string CurrentBlockId { get; set; } = string.Empty;
+        public Dictionary<string, double> PropertyValues { get; set; } = new();
+    }
     protected override void OnResize(EventArgs e)
     {
         base.OnResize(e);

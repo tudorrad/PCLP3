@@ -1,81 +1,81 @@
  
   Determining projects to restore...
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-  Restored C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj (in 225 ms).
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-  StoryEngine.Model -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+  Restored C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj (in 553 ms).
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+  StoryEngine.Model -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
 
 Build succeeded.
 
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
     4 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.45
+Time Elapsed 00:00:04.83
   Determining projects to restore...
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
-  Restored C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj (in 227 ms).
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
+  Restored C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj (in 272 ms).
   1 of 2 projects are up-to-date for restore.
-  StoryEngine.Model -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
-  StoryEngine.Engine -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\bin\Debug\net8.0-windows\StoryEngine.Engine.dll
+  StoryEngine.Model -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
+  StoryEngine.Engine -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\bin\Debug\net8.0-windows\StoryEngine.Engine.dll
 
 Build succeeded.
 
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\StoryEngine.Engine.csproj]
     2 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.70
+Time Elapsed 00:00:02.15
   Determining projects to restore...
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-  Restored C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj (in 239 ms).
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+  Restored C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj (in 260 ms).
   1 of 2 projects are up-to-date for restore.
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-  StoryEngine.Model -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
-  StoryEngine.Persistence -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\bin\Debug\net8.0-windows\StoryEngine.Persistence.dll
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+  StoryEngine.Model -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
+  StoryEngine.Persistence -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\bin\Debug\net8.0-windows\StoryEngine.Persistence.dll
 
 Build succeeded.
 
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w
     6 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.71
+Time Elapsed 00:00:01.94
   Determining projects to restore...
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-  Restored C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj (in 250 ms).
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+  Restored C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj (in 277 ms).
   3 of 4 projects are up-to-date for restore.
-  StoryEngine.Model -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
-  StoryEngine.Engine -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Engine\bin\Debug\net8.0-windows\StoryEngine.Engine.dll
-  StoryEngine.Persistence -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\bin\Debug\net8.0-windows\StoryEngine.Persistence.dll
-  StoryEngine.Player -> C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\bin\Debug\net8.0-windows\StoryEngine.Player.dll
+  StoryEngine.Model -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\bin\Debug\net8.0-windows\StoryEngine.Model.dll
+  StoryEngine.Persistence -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\bin\Debug\net8.0-windows\StoryEngine.Persistence.dll
+  StoryEngine.Engine -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Engine\bin\Debug\net8.0-windows\StoryEngine.Engine.dll
+  StoryEngine.Player -> C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\bin\Debug\net8.0-windows\StoryEngine.Player.dll
 
 Build succeeded.
 
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
-C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\matei\Desktop\nee_clean_pclp3\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Model\StoryEngine.Model.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
+C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Persistence\StoryEngine.Persistence.csproj : warning NU1903: Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [C:\Users\user2\Downloads\V6\V6\StoryEngine\StoryEngine.Player\StoryEngine.Player.csproj]
     4 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:02.25
+Time Elapsed 00:00:03.79
