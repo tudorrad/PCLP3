@@ -363,5 +363,3 @@ Verificati fisierul:
 ```
 
 ---
-
-*Tema semesteriala — Programare Avansata — 2025*
