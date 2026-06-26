@@ -4,7 +4,7 @@ Un motor de povești interactive cu două aplicații Windows Forms: **Editor** �
 
 ---
 
-## Structura proiectului
+## Structura proiectului   
 
 ```
 StoryEngine/
