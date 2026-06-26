@@ -298,9 +298,9 @@ public partial class EditorMainForm : Form
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColText",   HeaderText = "Text decizie",   FillWeight = 40 });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColTarget", HeaderText = "Bloc destinație", FillWeight = 25 });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColIcon",   HeaderText = "Icon (emoji)",   FillWeight = 10 });
-        _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColCondition", HeaderText = "Condiție (ex: sanatate>=20)", FillWeight = 28 });
+        _decisionsGrid.Columns.Add(new DataGridViewButtonColumn { Name = "ColCondition", HeaderText = "Condiție", FillWeight = 25, UseColumnTextForButtonValue = false, DefaultCellStyle = { BackColor = Color.FromArgb(40, 40, 60), ForeColor = Color.FromArgb(160, 195, 160), Font = new Font ("Segoe UI", 8) } });
         _decisionsGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ColEffects",HeaderText = "Efecte (prop:op:val,...)", FillWeight = 25 });
-
+        _decisionsGrid.CellContentClick += OnDecisionCellClick;
         _editorPanel.Controls.Add(_decisionsGrid);
 
         var saveBlockBtn = MakeButton("Salvează blocul", Color.FromArgb(30, 70, 30));
@@ -508,7 +508,8 @@ public partial class EditorMainForm : Form
             string effects = string.Join(",",
                 dec.Effects.Select(e => $"{e.Property}:{e.Type}:{e.Value}"));
             string condText = ConditionToText(dec.Condition);
-            _decisionsGrid.Rows.Add(dec.Text, dec.TargetBlock, dec.Icon ?? "", condText, effects);
+            int idx = _decisionsGrid.Rows.Add(dec.Text, dec.TargetBlock, dec.Icon ?? "", ConditionSummary(dec.Condition), effects);
+            _decisionsGrid.Rows[idx].Tag = dec.Condition;
         }
     }
 
@@ -817,6 +818,38 @@ public partial class EditorMainForm : Form
         };
     }
 
+    // ──────────────────────────────────────────────────────
+    // CONDIȚII – editor pe arbore
+    // ──────────────────────────────────────────────────────
+
+    private void OnDecisionCellClick(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (_decisionsGrid.Columns[e.ColumnIndex]?.Name != "ColCondition") return;
+        if (e.RowIndex < 0) return;
+        // Sari peste rândul-fantomă de la final (AllowUserToAddRows)
+        if (_decisionsGrid.AllowUserToAddRows
+            && e.RowIndex == _decisionsGrid.Rows.Count - 1) return;
+
+        var row = _decisionsGrid.Rows[e.RowIndex];
+        var current = row.Tag as ConditionNode;
+        var keys = _story.Properties.Select(p => p.Key).ToList();
+
+        using var dlg = new ConditionEditorForm(current, keys);
+        if (dlg.ShowDialog(this) != DialogResult.OK) return;
+
+        row.Tag = dlg.Result;
+        row.Cells["ColCondition"].Value = ConditionSummary(dlg.Result);
+        MarkDirty();
+    }
+
+    private static string ConditionSummary(ConditionNode? node) => node?.Type switch
+    {
+        "COMPARISON" => $"{node.Property} {node.Operator} " +
+                        $"{node.Value?.ToString(System.Globalization.CultureInfo.InvariantCulture)}",
+        "AND" => $"AND ({node.Conditions?.Count ?? 0} condiții)",
+        "OR" => $"OR ({node.Conditions?.Count ?? 0} condiții)",
+        _ => "(nicio condiție)"
+    };
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
         if (!ConfirmDiscard()) e.Cancel = true;
